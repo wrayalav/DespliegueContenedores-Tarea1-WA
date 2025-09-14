@@ -1,0 +1,29 @@
+# RED
+
+docker network create --driver bridge consultoriosql_net
+
+#VOLUME
+
+docker volume create consultoriosql_data
+
+# MySQL
+
+docker run -d \
+  --name consultoriosql_server \
+  --network consultoriosql_net \
+  --env-file .env \
+  -v consultoriosql_data:/var/lib/mysql \
+  -v "$PWD"/init.sql:/docker-entrypoint-initdb.d/init.sql \
+  -p 3306:3306 \
+  mysql:lts-oracle
+
+# phpMyAdmin
+
+docker run -d \
+  --name consultorio_phpmyadmin \
+  --network consultoriosql_net \
+  --env-file .env \
+  -e PMA_HOST=consultoriosql_server \
+  -p 8080:80 \
+  phpmyadmin:5.0
+  
