@@ -5,7 +5,7 @@
 - [Glenda Pallo](https://github.com/glendypallo/DespliegueContenedores-Tarea1-GP)
 - [Patricia Jaramillo](https://github.com/PatyJaramillo/DespliegueContenedores-Tarea1-PJ)
 - [William Ayala](https://github.com/wrayalav/DespliegueContenedores-Tarea1-WA)
-- [Guillermo Cifuentes](https://github.com/srcisnerosv-star/DespliegueContenedores-Tarea1-GC)
+- [Guillermo Cifuentes](https://github.com/guillogps/DespliegueContenedores-Tarea1-GC)
 - [Ruperto Cisneros](https://github.com/srcisnerosv-star/DespliegueContenedores-Tarea1-RC)
 
 ## Tarea 1:  Despliegue en Docker de phpMyAdmin
