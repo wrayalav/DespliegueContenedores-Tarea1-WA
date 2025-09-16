@@ -4,7 +4,7 @@
 ![Servidor de base de datos][dbsrv-shield]
 ![Servidor de contenedores][cont-shield]
 
-## Integrantes
+## Integrantes Grupo 3
 
 - [Glenda Pallo](https://github.com/glendypallo/DespliegueContenedores-Tarea1-GP)
 - [Patricia Jaramillo](https://github.com/PatyJaramillo/DespliegueContenedores-Tarea1-PJ)
