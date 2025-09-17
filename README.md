@@ -45,8 +45,8 @@ La tarea contiene los siguientes archivos:
 | Archivo | Descripción |
 | ---- | ---- |
 | [.env](.env) | Variables de entorno necesarias para inicializar y administrar la base de datos `consultorio`. |
-| [despliegues.txt](despliegues.txt) | Este arcvhivo contiene los comandos de docker para creación de: _red_, _volumen_, _contenedor de **MySQL**_, y _contenedor de **PhpMyAdmin**_. |
-| [init.sql](init.sql) | Archivo con los comandos sql (_Mysql_) para inicizalizar la base de datos `consultorio`. | 
+| [despliegues.txt](despliegues.txt) | Este archivo contiene los comandos de docker para creación de: _red_, _volumen_, _contenedor de **MySQL**_, y _contenedor de **PhpMyAdmin**_. |
+| [init.sql](init.sql) | Archivo con los comandos sql (_MySQL_) para inicizalizar la base de datos `consultorio`. | 
 
 <br/>
 
