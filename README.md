@@ -56,9 +56,17 @@ La tarea contiene los siguientes archivos:
 
 1. Creación de la red:
 
+   ```sh
+   > docker network create --driver bridge consultoriosql_net
+   ```
+
    <img width="2044" height="1149" alt="image" src="https://github.com/user-attachments/assets/a92068a6-9b64-49a8-9c3f-30ba52435d42" />
 
 2. Comprobación de la creación:
+
+   ```sh
+   > docker network ls
+   ```
 
    <img width="2048" height="1155" alt="image" src="https://github.com/user-attachments/assets/1a7d8619-76bb-46b4-92ba-76863b2ecca0" />
 
@@ -66,9 +74,17 @@ La tarea contiene los siguientes archivos:
 
 1. Creación del volumen:
 
+   ```sh
+   > docker volume create consultoriosql_data
+   ```
+
    <img width="2046" height="1149" alt="image" src="https://github.com/user-attachments/assets/8e243aa1-eb67-467f-abbb-f459e3e7b8b3" />
 
-2. Comprobación de la creación:
+1. Comprobación de la creación:
+
+   ```sh
+   > docker volume ls
+   ```
 
    <img width="2048" height="1155" alt="image" src="https://github.com/user-attachments/assets/32b4a3a0-f9ca-4461-b9a5-6622cc22d3bb" />
 
@@ -76,13 +92,38 @@ La tarea contiene los siguientes archivos:
   
 1. Creación del contenedor de MySQL:
 
+   ```sh
+   > docker run -d \
+     --name consultoriosql_server \
+     --network consultoriosql_net \
+     --env-file .env \
+     -v consultoriosql_data:/var/lib/mysql \
+     -v "$PWD"/init.sql:/docker-entrypoint-initdb.d/init.sql \
+     -p 3306:3306 \
+     mysql:lts-oracle
+   ```
+
    <img width="2047" height="1154" alt="image" src="https://github.com/user-attachments/assets/7eeea999-7290-4ccb-a65b-3dcf563262d0" />
 
 2. Creación del contenedor de PhpMyAdmin:
 
+   ```sh
+   > docker run -d \
+     --name consultorio_phpmyadmin \
+     --network consultoriosql_net \
+     --env-file .env \
+     -e PMA_HOST=consultoriosql_server \
+     -p 8080:80 \
+     phpmyadmin:5.0
+   ```
+
    <img width="2050" height="1154" alt="image" src="https://github.com/user-attachments/assets/52a0a2e3-b212-4fa3-b035-d2faa29f713e" />
 
 3. Comprobación de la creación:
+
+   ```sh
+   > docker ps -a
+   ```
 
    <img width="2052" height="1155" alt="image" src="https://github.com/user-attachments/assets/cb0af743-1d8f-4469-800e-027d7152a51d" />
 
